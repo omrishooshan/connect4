@@ -1,0 +1,17 @@
+1.diclaring a useReducer with initial state=
+
+the first player
+the winner is null
+the board is empty by initializing it using a special function
+
+2.looping through the board and displaying the UI accordinly
+
+3.when user click to fill in a specificv slot a reducer is being dispatched and there are a few actions:
+
+*a. in case action type is 'turn' :
+
+                                    1. check to see that the slot  is not full already (canPlay function)=>if it does than do nothing
+                                    2.  activate genNewBoard() function to create a copy of the new board with the player token (red or yellow)=> inside this fun we add the token to the first undefined slot
+                                    3. checking for a win using checkIfWinner() func => running 4 kinds of checks - vertical , horizontal , diaognal up, diognal down, in case of a win => the state will add the current player as the winner with a pop up to reset the game
+                                    4. in case of no win player token will be added to the board and the current_player state will be replaced to the second player
+                            

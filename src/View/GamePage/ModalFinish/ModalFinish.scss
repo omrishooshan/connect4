@@ -1,0 +1,35 @@
+.Overlay {
+    position: fixed;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+.Modal {
+    margin-top: 130px;
+    color: #007eff;
+    background: #fff;
+    border: 2px solid #3476d9;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.Modal h1 {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 20px;
+    color: black;
+    font-weight: bold;
+}
+
+.Modal h1 span {
+    margin-left: 10px;
+}

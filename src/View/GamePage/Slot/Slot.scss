@@ -1,0 +1,74 @@
+.Slot {
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 0 0 4px darkblue;
+    background-color: #f9f9f9;
+    background-size: 10px 10px;
+    margin: 5px;
+    background-image: repeating-linear-gradient(135deg,
+            #eeeeee 0,
+            #eeeeee 2px,
+            #f9f9f9 0,
+            #f9f9f9 50%);
+
+}
+
+@keyframes example {
+    0% {
+
+        top: -371px;
+    }
+
+    100% {
+
+        top: 0;
+    }
+}
+
+.Slot-red {
+    z-index: -2;
+    background: #ac0606;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    position: relative;
+    animation-name: example;
+    animation-duration: 500ms;
+
+    &::before {
+        position: absolute;
+        content: "";
+        inset: 0;
+        margin: auto;
+        width: 35px;
+        height: 35px;
+        border-radius: 35px;
+        background: radial-gradient(circle, hsl(0, 96%, 62%) 0%, hsl(1, 67%, 16%) 100%);
+    }
+
+}
+
+.Slot-yellow {
+    z-index: -2;
+    animation-name: example;
+    animation-duration: 500ms;
+    background: #e9e900;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        inset: 0;
+        margin: auto;
+        width: 35px;
+        height: 35px;
+        border-radius: 35px;
+        background: radial-gradient(circle, #fcff4f 0%, #ac9b07 100%);
+    }
+}
