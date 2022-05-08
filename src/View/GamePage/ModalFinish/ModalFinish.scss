@@ -1,7 +1,32 @@
+@mixin btn-common {
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 40px;
+    border-radius: 15px;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 100;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    -webkit-appearance: none;
+}
+
+@mixin btn-common-active {
+    transition: 0.3s all;
+    transform: translateY(3px);
+    border: 1px solid transparent;
+    opacity: 0.8;
+}
+
 .Overlay {
     position: fixed;
     display: flex;
     align-items: flex-start;
+    z-index: 99;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.5);
     background-color: rgba(0, 0, 0, 0.5);
@@ -32,4 +57,36 @@
 
 .Modal h1 span {
     margin-left: 10px;
+}
+
+.btn-reset {
+    background: #ec5990;
+    @include btn-common;
+
+    &:hover {
+        background: #bf1650;
+    }
+
+    &:active {
+        @include btn-common-active;
+    }
+}
+
+.btn-scoreboard {
+    background: #4d54c8;
+    @include btn-common;
+
+    &:hover {
+        background: #353988;
+    }
+
+    &:active {
+        @include btn-common-active;
+    }
+}
+
+.flex-buttons {
+    display: flex;
+    width: 100%;
+    gap: 25px
 }

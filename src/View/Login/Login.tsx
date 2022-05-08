@@ -1,5 +1,4 @@
 import { useForm } from "react-hook-form";
-import { writeStorage } from '@rehooks/local-storage';
 import { useNavigate } from "react-router-dom";
 import "./Login.scss";
 
@@ -29,8 +28,7 @@ export default function Login({ SetGameStarted }: any) {
 
     const onSubmit = handleSubmit((data) => {
         window.sessionStorage.setItem("isGameSessionStarted", "true");
-
-        writeStorage("players", data);
+        localStorage.setItem("players", JSON.stringify(data));
 
         SetGameStarted(true)
 
@@ -42,7 +40,7 @@ export default function Login({ SetGameStarted }: any) {
     return (
         <>
             <div className="LoginPage">
-                <h1>Connect 4 Login</h1>
+                <h1 className="loginTitle">Connect 4 Login</h1>
                 <form onSubmit={onSubmit}>
 
                     <div className="FlexWrapper">

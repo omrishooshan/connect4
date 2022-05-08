@@ -27,12 +27,14 @@ function ModalFinish({
                         <span>There Was A Tie</span>
                     }
                 </h1>
-                <button onClick={() => resetGame(winnerColor === 'red' ? 'yellow' : 'red')}>
-                    Rematch
-                </button>
-                <button onClick={() => navigate('/scoreboard')}>
-                    Go to Score Board
-                </button>
+                <div className='flex-buttons'>
+                    <button className='btn-reset' onClick={() => resetGame(winnerColor === 'red' ? 'yellow' : 'red')}>
+                        Rematch
+                    </button>
+                    <button className='btn-scoreboard' onClick={() => navigate('/scoreboard')}>
+                        Score Board
+                    </button>
+                </div>
             </div>
         </div>
     )

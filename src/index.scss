@@ -16,24 +16,15 @@ body {
   position: relative;
 }
 
-html {
-  height: 100%;
-}
-
 body {
-  height: 100%;
-
+  margin: 0;
   font-family: $font-family_1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 .App {
-  padding: 4rem 0;
-  flex: 1;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   inset: 0;

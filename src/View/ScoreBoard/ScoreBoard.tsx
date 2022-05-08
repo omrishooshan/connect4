@@ -23,7 +23,7 @@ const columns: GridColDef[] = [
         field: 'moves',
         headerName: 'Counter Of Moves',
         type: 'number',
-        width: 130,
+        width: 150,
     },
 
 ];
@@ -33,7 +33,7 @@ export default function ScoreBoard() {
     let gameSummary: string = localStorage.getItem("gameSummary") || ""
     let newArr = JSON.parse(gameSummary)
     let parsedItemsArr = newArr.map((item: string) => JSON.parse(item))
-        .sort((a: winnerInfo, b: winnerInfo) => a.moves > b.moves)
+        .sort((a: winnerInfo, b: winnerInfo) => a.moves - b.moves)
         .map((item: winnerInfo, index: number) => {
             item.id = index.toString()
             return item
@@ -42,17 +42,17 @@ export default function ScoreBoard() {
 
     if (!parsedItemsArr) return <h1>Loading...</h1>
     return (
-        <>
+        <div className='scoreboardWrapper'>
             <h1 className='scoreboardTitle'>GAME SCOREBOARD</h1>
             <div className="tableWrapper">
                 <DataGrid
                     rows={parsedItemsArr}
                     columns={columns}
-                    pageSize={10}
-                    rowsPerPageOptions={[10]}
+                    pageSize={5}
+                    rowsPerPageOptions={[5]}
                 />
             </div>
-        </>
+        </div>
     );
 
 }

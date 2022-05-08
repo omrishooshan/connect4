@@ -4,7 +4,6 @@ import './GamePage.scss'
 import ModalFinish from './ModalFinish/ModalFinish'
 import useGameHelper from './hooks/useGameHelper';
 import { useStopwatch } from 'react-timer-hook';
-import { writeStorage } from '@rehooks/local-storage';
 import { useEffect } from 'react';
 
 export default function GamePage() {
@@ -37,7 +36,7 @@ export default function GamePage() {
 
             parsedGameSummary.push(JSON.stringify(jsonObjWinner))
 
-            writeStorage("gameSummary", parsedGameSummary)
+            localStorage.setItem("gameSummary", JSON.stringify(parsedGameSummary))
         }
     }, [state.winner])
 
