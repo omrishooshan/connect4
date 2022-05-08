@@ -5,6 +5,7 @@ import ModalFinish from './ModalFinish/ModalFinish'
 import useGameHelper from './hooks/useGameHelper';
 import { useStopwatch } from 'react-timer-hook';
 import { useEffect } from 'react';
+import connect4logo from '../../img/connect4logo.png'
 
 export default function GamePage() {
     const { state, dispatch } = useGameHelper()
@@ -48,7 +49,7 @@ export default function GamePage() {
             {state.tie && (
                 <ModalFinish tie={state.tie} resetGame={resetGame} />
             )}
-            <h1 className="Title">Connect 4</h1>
+            <div className='Title'><img style={{ width: "30rem" }} src={connect4logo} alt="connect 4 logo" /></div>
             <div className="Turn">
                 <div className="TurnText">Player turn:</div>
                 <strong style={{ color: `${state.currentPlayer}` }}> {players[`${state.currentPlayer}Nickname`]}  </strong>
