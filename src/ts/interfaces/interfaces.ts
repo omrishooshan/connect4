@@ -1,4 +1,4 @@
-import { Player, TBoard, Token } from '../types/types'
+import { Player, TBoard, Slot } from '../types/types'
 
 export interface IGameState {
     currentPlayer: Player
@@ -12,6 +12,6 @@ export interface IGameState {
 }
 
 export interface IColumnProps {
-    column: Token[]
+    column: Slot[]
     onClick: () => void
 }

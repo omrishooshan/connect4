@@ -1,6 +1,6 @@
 export type Player = 'red' | 'yellow'
-export type Token = undefined | Player
-export type TBoard = Token[][]
+export type Slot = undefined | Player
+export type TBoard = Slot[][]
 export type winnerInfo = {
     id?: string
     winner: string

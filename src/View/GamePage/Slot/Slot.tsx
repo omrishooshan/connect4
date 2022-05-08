@@ -1,10 +1,10 @@
-import { Token } from '../../../ts/types/types'
+import { Slot } from '../../../ts/types/types'
 import './Slot.scss'
 
 export default function Cell({
-    token,
+    Slot,
 }: {
-    token: Token
+    Slot: Slot
 }) {
 
     const classProperties = {
@@ -14,7 +14,7 @@ export default function Cell({
 
     return (
         <div
-            className={token ? classProperties[token] : "Slot"}
+            className={Slot ? classProperties[Slot] : "Slot"}
         />
     )
 }

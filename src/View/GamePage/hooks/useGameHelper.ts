@@ -1,9 +1,9 @@
 import { useReducer } from "react"
 import { IGameState } from '../../../ts/interfaces/interfaces';
-import { Player, Token, TBoard, GameAction } from '../../../ts/types/types'
+import { Player, Slot, TBoard, GameAction } from '../../../ts/types/types'
 import { TotalColumns, TotalRows, MaxSlots } from './contants'
 
-function canPlay(column: Token[]) {
+function canPlay(column: Slot[]) {
     return column.some((cell) => cell === undefined)
 }
 
