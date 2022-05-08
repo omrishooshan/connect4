@@ -1,15 +1,16 @@
 import { useReducer } from "react"
-import { GameState } from '../../../ts/interfaces/interfaces';
+import { IGameState } from '../../../ts/interfaces/interfaces';
 import { Player, Token, TBoard, GameAction } from '../../../ts/types/types'
+import { TotalColumns, TotalRows, MaxSlots } from './contants'
 
 function canPlay(column: Token[]) {
     return column.some((cell) => cell === undefined)
 }
 
 const createEmptyBoard = (): TBoard => {
-    return Array(7)
+    return Array(TotalColumns)
         .fill(undefined)
-        .map(() => Array(6).fill(undefined))
+        .map(() => Array(TotalRows).fill(undefined))
 }
 
 
@@ -33,7 +34,7 @@ const createNewBoard = (
     })
 }
 
-function initState(player: Player): GameState {
+function initState(player: Player): IGameState {
 
     return {
         currentPlayer: player,
@@ -48,13 +49,13 @@ function initState(player: Player): GameState {
 }
 
 function checkIfTie(moves: any) {
-    if (moves["red"] + moves["yellow"] === 42) return true
+    if (moves["red"] + moves["yellow"] === MaxSlots) return true
     else return false
 
 }
 function checkIfWinner(board: TBoard, player: Player) {
     // vertical check
-    for (let j = 0; j < 7; j++) {
+    for (let j = 0; j < TotalColumns; j++) {
         const column = board[j]
         for (let i = 0; i < 3; i++) {
             if (
@@ -70,7 +71,7 @@ function checkIfWinner(board: TBoard, player: Player) {
 
     // horizontal check
     for (let i = 0; i < 4; i++) {
-        for (let j = 0; j < 7; j++) {
+        for (let j = 0; j < TotalColumns; j++) {
             if (
                 board[i][j] == player &&
                 board[i + 1][j] == player &&
@@ -113,7 +114,7 @@ function checkIfWinner(board: TBoard, player: Player) {
     return false
 }
 
-function reducer(state: GameState, action: GameAction): GameState {
+function reducer(state: IGameState, action: GameAction): IGameState {
 
 
     switch (action.type) {

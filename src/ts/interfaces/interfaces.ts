@@ -1,6 +1,6 @@
 import { Player, TBoard, Token } from '../types/types'
 
-export interface GameState {
+export interface IGameState {
     currentPlayer: Player
     winner: Player | null
     tie: Boolean | null
@@ -11,7 +11,7 @@ export interface GameState {
     }
 }
 
-export interface ColumnProps {
+export interface IColumnProps {
     column: Token[]
     onClick: () => void
 }
