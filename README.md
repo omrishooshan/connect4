@@ -31,7 +31,13 @@ On the scoreboard we will see the list of playing games with the fields: Winner,
 During the game we need to be able to see who’s turn it is. The app should be built in react technology and typescript. All the other technologies and libraries are up to you. Thinking out of the box and creativity will be very appreciated!
 
 # Game images:
+
+the actual game screenshot:
 ![Alt text](assets/img1.png?raw=true "game board")
+
+the login page screenshot:
+
+![Alt text](assets/img2.png?raw=true "login page")
 
 # Tech Stack:
 this a create-react-app project with typescript
