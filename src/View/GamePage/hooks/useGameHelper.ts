@@ -169,8 +169,6 @@ const randomPlayer = randonArr[Math.floor(Math.random() * randonArr.length)];
 
 export default function useGameHelper() {
 
-    console.log("inside usegamehelper")
-
     const initialPlayer = randomPlayer
 
     const [state, dispatch] = useReducer(reducer, initState(initialPlayer))

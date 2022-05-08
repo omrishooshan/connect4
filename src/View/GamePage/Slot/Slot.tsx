@@ -3,10 +3,8 @@ import './Slot.scss'
 
 export default function Cell({
     token,
-    size
 }: {
     token: Token
-    size?: number
 }) {
 
     const classProperties = {

@@ -10,14 +10,13 @@ $font-family_1: -apple-system,
   "Helvetica Neue",
   sans-serif;
 
+html,
+body {
+  height: 100%;
+  position: relative;
+}
+
 html {
-  // background-color: #f9f9f9;
-  // background-size: 10px 10px;
-  // background-image: repeating-linear-gradient(135deg,
-  //     #eeeeee 0,
-  //     #eeeeee 2px,
-  //     #f9f9f9 0,
-  //     #f9f9f9 50%);
   height: 100%;
 }
 
@@ -27,8 +26,16 @@ body {
   font-family: $font-family_1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // display: flex;
 
-  // align-items: center;
-  // justify-content: center;
+}
+
+.App {
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  position: absolute;
 }

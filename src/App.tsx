@@ -1,6 +1,7 @@
 import GamePage from './View/GamePage/GamePage'
 import Login from './View/Login/Login'
 import ScoreBoard from './View/ScoreBoard/ScoreBoard'
+import CoolBackground from './View/CoolBackground/CoolBackground';
 import {
   BrowserRouter,
   Routes,
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <div className="App">
+      <CoolBackground />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Navigate replace to="/login" />} />

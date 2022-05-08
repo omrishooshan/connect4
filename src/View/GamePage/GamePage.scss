@@ -1,8 +1,7 @@
 .Board {
     margin: auto;
     border-radius: 15px;
-    background: rgb(63, 140, 251);
-    background: radial-gradient(circle, rgba(63, 140, 251, 1) 0%, #004eab 100%);
+    background: radial-gradient(circle, #8b0030 0%, #bf1650 100%);
     box-shadow: 0 0.5vmin 1vmin 1vmin rgba(0, 0, 0, 0.5);
     padding: 10px;
     display: grid;
@@ -18,28 +17,36 @@
     margin: 20px;
     text-align: center;
     margin-bottom: 60px;
-    color: #007eff;
+    color: #ffff;
     background: #fff;
     font-size: 40px;
     text-transform: uppercase;
     font-weight: 900;
     font-family: 'Catamaran', sans-serif;
     font-style: italic;
-    border-radius: 20px;
     padding: 10px 20px;
-    border: 4px solid #3476d9;
+
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .Turn {
-    border-radius: 20px;
     display: inline-flex;
     align-items: center;
     margin: auto;
     margin-bottom: 20px;
-    color: #007eff;
-    background: #fff;
-    border: 2px solid #3476d9;
+    color: #ffffff;
     padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .TurnText {

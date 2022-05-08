@@ -1,5 +1,6 @@
 
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import { winnerInfo } from '../../ts/types/types';
 import "./ScoreBoard.scss";
 
 
@@ -27,36 +28,31 @@ const columns: GridColDef[] = [
 
 ];
 
-const rows = [
-    { id: 1, winner: 'Jon', age: 35 },
-    { id: 2, winner: 'Cersei', age: 42 },
-    { id: 3, winner: 'Jaime', age: 45 },
-    { id: 4, winner: 'Arya', age: 16 },
-    { id: 7, winner: 'Ferrara', age: 44 },
-    { id: 8, winner: 'Rossini', age: 36 },
-    { id: 9, winner: 'Harvey', age: 65 },
-];
-
 export default function ScoreBoard() {
 
-    let gameSummary: any = localStorage.getItem("gameSummary")
+    let gameSummary: string = localStorage.getItem("gameSummary") || ""
     let newArr = JSON.parse(gameSummary)
-    let parsedItemsArr = newArr.map((item: any, index: number) => JSON.parse(item))
-    console.log(parsedItemsArr)
+    let parsedItemsArr = newArr.map((item: string) => JSON.parse(item))
+        .sort((a: winnerInfo, b: winnerInfo) => a.moves > b.moves)
+        .map((item: winnerInfo, index: number) => {
+            item.id = index.toString()
+            return item
+        })
 
 
-    if (parsedItemsArr) return (
-        <div className="tableWrapper">
+    if (!parsedItemsArr) return <h1>Loading...</h1>
+    return (
+        <>
             <h1 className='scoreboardTitle'>GAME SCOREBOARD</h1>
-            <DataGrid
-                rows={parsedItemsArr}
-                columns={columns}
-                pageSize={5}
-                rowsPerPageOptions={[5]}
-            />
-        </div>
+            <div className="tableWrapper">
+                <DataGrid
+                    rows={parsedItemsArr}
+                    columns={columns}
+                    pageSize={10}
+                    rowsPerPageOptions={[10]}
+                />
+            </div>
+        </>
     );
-    else {
-        return <h1>Loading...</h1>
-    }
+
 }

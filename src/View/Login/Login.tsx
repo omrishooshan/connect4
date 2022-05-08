@@ -12,7 +12,6 @@ type FormValues = {
 
 export default function Login({ SetGameStarted }: any) {
 
-
     const navigate = useNavigate()
 
     const {
